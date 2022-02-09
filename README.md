@@ -16,5 +16,6 @@ Run the main classes in the GbifAPIFetcher class and NCDCAPIFetcher class. Store
 Structure:
 The main directory includes two directories; in the java directory all the java classes can be found to run the application.
 Within the webapp folder the static css and csv files can be found. The WEB-INF folder holds the html pages (located in templates folder)  
+'Thema10_Web_Application.pdf' includes our report on the web application project.
 
 Support: For any questions send an email to h.s.reefman@st.hanze.nl or m.setz@st.hanze.nl
