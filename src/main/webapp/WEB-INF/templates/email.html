@@ -1,0 +1,14 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <div th:insert="template :: headerFragment"></div>
+  <title th:text="#{title.msg}">Success</title>
+</head>
+<body>
+<div th:insert="template :: menu"></div>
+
+<p th:text="#{sent.msg}">Email sent successfully......</p>
+
+<div th:insert="template :: footer"></div>
+</body>
+</html>

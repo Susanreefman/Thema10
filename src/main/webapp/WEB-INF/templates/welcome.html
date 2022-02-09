@@ -1,0 +1,257 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang=en xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <div th:insert="template :: headerFragment"></div>
+    <title>Welcome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .column {
+            float: left;
+            width: 25%;
+            padding: 5px;
+        }
+
+        /* Clearfix (clear floats) */
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+</head>
+
+
+<body>
+<div th:insert="template :: menu"></div>
+
+
+<br>
+<tab><h1>Find your endangered species on the map!</h1></tab>
+<br>
+<div class="row">
+    <div class="column">
+        <p><a href="/find_species">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Persian_sand_CAT.jpg" alt="© Payman Sazesh" width="300" height="300">
+        </a></p>
+    </div>
+    <div class="column">
+        <p><a href="/find_species">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Atelocynus_microtis_en_Amazonie_p%C3%A9ruvienne.jpg" alt="© Igor de le Vingne" width="300" height="300">
+        </a></p>
+    </div>
+    <div class="column">
+        <p><a href="/find_species">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Blue_iguana_%28Cyclura_lewisi%29_male.JPG" alt="© Charles J. Sharp " width="300" height="300">
+        </a></p>
+    </div>
+    <div class="column">
+        <p><a href="/find_species">
+            <img src="https://www.zoo.org.au/media/1738/12318_mountain_pygmy_possum_offsite.jpg" alt="© https://www.zoo.org.au/fighting-extinction/local-threatened-species/mountain-pygmy-possum/ " width="300" height="300">
+        </a></p>
+    </div>
+</div>
+
+<div class="wrapper">
+    <h1>Find information about species</h1>
+    <h3>Fill in name of species:</h3>
+    <div class="search-input">
+        <a href="" target="_blank" hidden></a>
+        <input autocomplete="off" type="text" id="search" placeholder="Type to search..">
+        <div class="autocom-box">
+            <!-- here list are inserted from javascript -->
+        </div>
+        <div class="icon"><i class="fas fa-search"></i></div>
+        <input type="submit" onclick="appendData(document.getElementById('search').value)">
+    </div>
+</div>
+
+<div id="info-wrapper">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-6">
+            <div class="container-fluid mt-3 w3-border w3-padding w3-round ws-grey">
+                <fieldset>
+                    <legend>Info</legend>
+                    <h1 id="common-name"></h1>
+                    <p id="scientific-name"></p>
+                    <p id="date"></p>
+                    <p id="author"></p>
+                    <p id="location"></p>
+                    <p id="extinct"></p>
+                </fieldset>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div th:insert="template :: footer"></div>
+
+
+<script type="text/javascript">
+    let suggestions = [];
+    $.getJSON("/species.json", function(data) {
+        $.each(data, function(key, val) {
+            if ($.inArray(val.CommonName, suggestions) === -1) {
+                suggestions.push(val.CommonName + ", " + val.Genus + " " + val.Species)
+            }
+        })
+    });
+    console.log(suggestions)
+</script>
+<script>
+    function autocomplete(inp, arr) {
+        /*the autocomplete function takes two arguments,
+        the text field element and an array of possible autocompleted values:*/
+        var currentFocus;
+        /*execute a function when someone writes in the text field:*/
+        inp.addEventListener("input", function(e) {
+            var a, b, i, val = this.value;
+            /*close any already open lists of autocompleted values*/
+            closeAllLists();
+            if (!val) { return false;}
+            currentFocus = -1;
+            /*create a DIV element that will contain the items (values):*/
+            a = document.createElement("DIV");
+            a.setAttribute("id", this.id + "autocomplete-list");
+            a.setAttribute("class", "autocomplete-items");
+            /*append the DIV element as a child of the autocomplete container:*/
+            this.parentNode.appendChild(a);
+            /*for each item in the array...*/
+            for (i = 0; i < arr.length; i++) {
+                /*check if the item starts with the same letters as the text field value:*/
+                if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                    /*create a DIV element for each matching element:*/
+                    b = document.createElement("DIV");
+                    /*make the matching letters bold:*/
+                    b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                    b.innerHTML += arr[i].substr(val.length);
+                    /*insert a input field that will hold the current array item's value:*/
+                    b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                    /*execute a function when someone clicks on the item value (DIV element):*/
+                    b.addEventListener("click", function(e) {
+                        /*insert the value for the autocomplete text field:*/
+                        inp.value = this.getElementsByTagName("input")[0].value;
+                        /*close the list of autocompleted values,
+                        (or any other open lists of autocompleted values:*/
+                        closeAllLists();
+                    });
+                    a.appendChild(b);
+                }
+            }
+        });
+        /*execute a function presses a key on the keyboard:*/
+        inp.addEventListener("keydown", function(e) {
+            var x = document.getElementById(this.id + "autocomplete-list");
+            if (x) x = x.getElementsByTagName("div");
+            if (e.keyCode == 40) {
+                /*If the arrow DOWN key is pressed,
+                increase the currentFocus variable:*/
+                currentFocus++;
+                /*and and make the current item more visible:*/
+                addActive(x);
+            } else if (e.keyCode == 38) { //up
+                /*If the arrow UP key is pressed,
+                decrease the currentFocus variable:*/
+                currentFocus--;
+                /*and and make the current item more visible:*/
+                addActive(x);
+            } else if (e.keyCode == 13) {
+                /*If the ENTER key is pressed, prevent the form from being submitted,*/
+                e.preventDefault();
+                if (currentFocus > -1) {
+                    /*and simulate a click on the "active" item:*/
+                    if (x) x[currentFocus].click();
+                }
+            }
+        });
+        function addActive(x) {
+            /*a function to classify an item as "active":*/
+            if (!x) return false;
+            /*start by removing the "active" class on all items:*/
+            removeActive(x);
+            if (currentFocus >= x.length) currentFocus = 0;
+            if (currentFocus < 0) currentFocus = (x.length - 1);
+            /*add class "autocomplete-active":*/
+            x[currentFocus].classList.add("autocomplete-active");
+        }
+        function removeActive(x) {
+            /*a function to remove the "active" class from all autocomplete items:*/
+            for (var i = 0; i < x.length; i++) {
+                x[i].classList.remove("autocomplete-active");
+            }
+        }
+        function closeAllLists(elmnt) {
+            /*close all autocomplete lists in the document,
+            except the one passed as an argument:*/
+            var x = document.getElementsByClassName("autocomplete-items");
+            for (var i = 0; i < x.length; i++) {
+                if (elmnt != x[i] && elmnt != inp) {
+                    x[i].parentNode.removeChild(x[i]);
+                }
+            }
+        }
+        /*execute a function when someone clicks in the document:*/
+        document.addEventListener("click", function (e) {
+            closeAllLists(e.target);
+        });
+    }
+
+    /*An array containing all the country names in the world:*/
+    autocomplete(document.getElementById("search"), suggestions);
+</script>
+<script>
+    $('#info-wrapper').hide();
+    function appendData(data) {
+        fetch('/species.json')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (dat) {
+                console.log("appenddata2")
+                var mainContainer = document.getElementById("myData");
+                for (var i = 0; i < dat.length; i++) {
+                    checker = dat[i].CommonName + ", " + dat[i].Genus + " " + dat[i].Species
+                    if (data == checker) {
+                        $('#info-wrapper').show();
+                        var div = document.createElement("div");
+                        console.log('Name: ' + dat[i].Genus + ' ' + dat[i].Species);
+                        document.getElementById('common-name').innerHTML = dat[i].CommonName;
+                        document.getElementById('scientific-name').innerHTML = "scientific name: " + dat[i].Genus + " " + dat[i].Species;
+                        document.getElementById('date').innerHTML = "Date of discovery: " + dat[i].Date;
+                        document.getElementById('author').innerHTML = "Author: " + dat[i].Author;
+                        document.getElementById('location').innerHTML = "Habitat: " + dat[i].Distribution;
+                        if (dat[i].Extinct == true) {
+                            document.getElementById('extinct').innerHTML = "Extinct: yes";
+                        } else {
+                            document.getElementById('extinct').innerHTML = "Extinct: no";
+                        }
+
+                    }
+                }
+            })
+            .catch(function (err) {
+                console.log('error: ' + err);
+            });
+
+
+    }
+</script>
+
+</body>
+</html>

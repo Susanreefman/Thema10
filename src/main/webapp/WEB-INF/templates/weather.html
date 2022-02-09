@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <div th:insert="template :: headerFragment"></div>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+        #viewDiv {
+            padding: 20px;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+        #body{
+            padding: 40px;
+            margin:0;
+            height: 100%;
+            width:75%;
+        }
+
+    </style>
+
+
+    <link rel="stylesheet" href="https://js.arcgis.com/4.22/esri/themes/light/main.css">
+    <script src="https://js.arcgis.com/4.22/"></script>
+    <script>
+        require([
+            "esri/config",
+            "esri/Map",
+            "esri/request",
+            "esri/layers/FeatureLayer",
+            "esri/views/MapView",
+            "esri/layers/support/LabelClass"
+        ], function (esriConfig, Map, esriRequest, FeatureLayer, MapView, LabelClass) {
+            const map = new Map({
+                basemap: "topo-vector"
+            });
+
+            const view = new MapView({
+                map: map,
+                center: [40.8604407, 34.5734479],
+                zoom: 2,
+                container: "viewDiv" // Div element
+            });
+
+            // add buttons to the mapView
+            view.ui.add(document.getElementById("actions"), "top-right");
+            const addBtn = document.getElementById("add");
+
+            addBtn.addEventListener("click", addFeatures);
+
+            function addFeatures() {
+                let features = [];
+                let objectID = 1;
+
+
+                // Set a basic symbol on a layer to visualize all features the same way
+                let stationRenderer = {
+                    type: "simple",
+                    symbol: {
+                        type: "simple-marker",
+                        size: 2,
+                        color: "grey",
+                        outline: {
+                            width: 0.5,
+                            color: "grey"
+                        }
+                    }
+                };
+
+                let options = {
+                    query: {
+                        nstations: 3000
+                    },
+                    responseType: "json"
+                };
+
+                esriRequest("/stationdownload", options).then(function (response) {
+                    response.data.forEach(station => {
+
+                        /* Extract data from each response element into a feature
+                    consisting of the geometry and any attributes */
+                        let geometry = {
+                            type: "point",
+                            x: parseFloat(station['longitude']),
+                            y: parseFloat(station['latitude'])
+                        };
+                        let attr = {
+                            ObjectID: objectID,
+                            name: station.name,
+                            id: station.id,
+                            elevation: station.elevation
+                        };
+
+                        features.push({
+                            geometry: geometry,
+                            attributes: attr,
+
+                        });
+
+                        objectID++;
+                    });
+
+                    let stationFeatureLayer = new FeatureLayer({
+                        source: features,
+                        objectIdField: "ObjectID",
+                        opacity: 0.5,
+                        fields: [
+                            {
+                                name: "ObjectID",
+                                type: "oid"
+                            }, {
+                                name: "name",
+                                type: "string"
+                            }, {
+                                name: "id",
+                                type: "double"
+                            }, {
+                                name: "elevation",
+                                type: "string"
+                            }
+                        ],
+                        renderer: stationRenderer
+                    });
+
+                    const statesLabelClass = new LabelClass({
+                        labelExpressionInfo: { expression: "$feature.NAME" },
+                        symbol: {
+                            type: "text",  // autocasts as new TextSymbol()
+                            color: "black",
+                            haloSize: 1,
+                            haloColor: "white"
+                        }
+                    });
+
+                    // Add FeatureLayer to the map.
+                    stationFeatureLayer.labelingInfo = [ statesLabelClass ];
+                    map.add(stationFeatureLayer);
+
+
+                });
+
+            }
+
+
+            function addSpecies(key) {
+                let speciesFeatures = [];
+                let objectID = 1;
+                let options = {
+                    query: {
+                        key: key
+                    }
+                }
+
+                let speciesRenderer = {
+                    type: "simple",
+                    symbol: {
+                        type: "simple-marker",
+                        size: 3,
+                        color: "red",
+                        outline: {
+                            width: 0.5,
+                            color: "red"
+                        }
+                    }
+                };
+
+                esriRequest("/speciesdownload", options).then(function (response) {
+                    response.data.forEach(obs => {
+
+                        let geometry = {
+                            type: "point",
+                            x: parseFloat(obs['decimalLongitude']),
+                            y: parseFloat(obs['decimalLatitude'])
+                        };
+                        let attr = {
+                            ObjectID: objectID,
+                            country: obs.country,
+                            id: obs.key,
+                        };
+
+                        speciesFeatures.push({
+                            geometry: geometry,
+                            attributes: attr,
+                        });
+
+                        objectID++;
+                    });
+
+                    let speciesFeatureLayer = new FeatureLayer({
+                        source: speciesFeatures,
+                        objectIdField: "ObjectID",
+                        renderer: speciesRenderer,
+                        fields: [
+                            {
+                                name: "ObjectID",
+                                type: "oid"
+                            }, {
+                                name: "country",
+                                type: "string"
+                            }, {
+                                name: "key",
+                                type: "double"
+                            }
+                        ]
+                    });
+
+                    speciesFeatureLayer.featureReduction = {
+                        type: "cluster",
+                        clusterRadius: 2,
+                        labelingInfo: [{
+                            labelExpressionInfo: {
+                                expression: "$feature.cluster_avg_country"
+                            },
+                            labelPlacement: "center-center",
+                            symbol: {
+                                type: "text",
+                                color: "white",
+                                font: {
+                                    size: "12px"
+                                },
+                                haloSize: 1,
+                                haloColor: "black"
+                            }
+                        }]
+                    };
+                    map.add(speciesFeatureLayer);
+
+                    return speciesFeatureLayer
+                });
+            }
+
+            function removeFeatures(layers) {
+                map.delete(layers)
+            }
+
+
+            const selectElement = document.querySelector('.species');
+            selectElement.addEventListener('change', (event) => {
+                console.log(event.target.value);
+                addSpecies(event.target.value);
+                // const layers =
+                    // removeFeatures(layers)
+                changeText(event.target.value)
+
+            });
+
+            function changeText(value){
+                let message;
+                let info;
+                switch (value) {
+                    case '2440237':
+                        message = 'Mountain Pygmy Possum';
+                        info = 'Scientific Name: Burramys parvus Broom <br>' +
+                            'kingdom: Animalia <br>' +
+                            'Phylum: Chordata <br>' +
+                            'Order: Diprotodontia <br>' +
+                            'Family: Burramyidae <br>' +
+                            'Genus: Burramys<br>' +
+                            'Species: Burramys parvus';
+                        break;
+                    case '2434454':
+                        message = 'Short-eared Dog ';
+                        info = 'Scientific Name: Atelocynus microtis <br>' +
+                            'kingdom: Animalia <br>' +
+                            'Phylum: Chordata <br>' +
+                            'Order: Carnivora <br>' +
+                            'Family: Canidae <br>' +
+                            'Genus: Atelocynus <br>' +
+                            'Species: Atelocynus microtis';
+                        break;
+                    case '7982719':
+                        message = 'Grand Cayman Blue Iguana';
+                        info = 'Scientific Name: Cyclura lewisi Grant <br>' +
+                            'kingdom: Animalia <br>' +
+                            'Phylum: Chordata <br>' +
+                            'Order: Squamata <br>' +
+                            'Family: Iguanidae <br>' +
+                            'Genus: Cyclura <br>' +
+                            'Species: Cyclura lewisi';
+                        break;
+                    case '2435028':
+                        message = 'Sand Cat';
+                        info = 'Scientific Name: Felis margarita Loche <br>' +
+                            'kingdom: Animalia <br>' +
+                            'Phylum: Chordata <br>' +
+                            'Order: Carnivora <br>' +
+                            'Family: Felidae <br>' +
+                            'Genus: Felis <br>' +
+                            'Species: Felis margarita';
+                        break;
+                    case '':
+                        message = '';
+                        info = '';
+                        break
+                }
+                document.getElementById('textHeader').innerHTML = message;
+                document.getElementById('infoSpecies').innerHTML = info;
+                return false;
+            };
+
+        });
+
+    </script>
+
+    <div th:insert="template :: menu"></div>
+
+</head>
+<body>
+
+<div id="body">
+    <label>Choose a species:
+        <select class="species" name="species" >
+            <option>Select option</option>
+            <option value="2440237">Mountain Pygmy Possum</option>
+            <option value="2434454">Short-eared Dog </option>
+            <option value="7982719">Grand Cayman Blue Iguana</option>
+            <option value="2435028">Sand cat</option>
+        </select>
+    </label>
+
+    <h3 id="textHeader"><br><br> </h3>
+
+    <p id="infoSpecies"> </p>
+
+    <div id="viewDiv"></div>
+
+    <form action="https://www.ncei.noaa.gov/maps/global-summaries/">
+        <input type="submit" value="Find weather information!" />
+    </form>
+
+    <div id="actions" class="esri-widget">
+        <button class="esri-button" id="add">Add Stations</button>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+</div>
+
+
+<div th:insert="template :: footer"></div>
+
+<!-- Include custom JS files here -->
+
+<script src="/static/js/homeJS.js"></script>
+</body>
+</html>

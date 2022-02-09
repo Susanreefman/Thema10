@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <div th:insert="template :: headerFragment"></div>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        html,
+        body,
+        #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 90%;
+        }
+    </style>
+
+
+    <link rel="stylesheet" href="https://js.arcgis.com/4.22/esri/themes/light/main.css">
+    <script src="https://js.arcgis.com/4.22/"></script>
+    <script>
+        require([
+            "esri/config",
+            "esri/Map",
+            "esri/request",
+            "esri/layers/FeatureLayer",
+            "esri/views/MapView"
+        ], function (esriConfig, Map, esriRequest, FeatureLayer, MapView) {
+            const map = new Map({
+                basemap: "topo-vector"
+            });
+
+            const view = new MapView({
+                map: map,
+                center: [6.748, 53.31],
+                zoom: 2,
+                container: "viewDiv" // Div element
+            });
+
+            let features = [];
+            let objectID = 1;
+
+            let options = {
+                query : {
+                    nstations: 2500
+                },
+                responseType: "json"
+            };
+
+            esriRequest("/speciesdownload", options).then(function (response) {
+                response.data.forEach(obs => {
+
+                    /*
+                        "eventDate": "2020-04-29T06:10:00",
+                        "key": "2802633944",
+                        "country": "Peru",
+                        "identificationVerificationStatus": null,
+                        "decimalLatitude": -12.298866,
+                        "decimalLongitude": -68.89192
+
+                    Extract data from each response element into a feature
+                    consisting of the geometry and any attributes */
+
+                    let geometry = {
+                        type: "point",
+                        x: parseFloat(obs['decimalLongitude']),
+                        y: parseFloat(obs['decimalLatitude'])
+                    };
+                    let attr = {
+                        ObjectID: objectID,
+                        country: obs.country,
+                        id: obs.key,
+                    };
+
+                    features.push({
+                        geometry: geometry,
+                        attributes: attr
+                    });
+
+                    objectID++;
+                });
+
+                let speciesFeatureLayer = new FeatureLayer({
+                    source: features,
+                    objectIdField: "ObjectID",
+                    fields: [
+                        {
+                            name: "ObjectID",
+                            type: "oid"
+                        }, {
+                            name: "country",
+                            type: "string"
+                        }, {
+                            name: "key",
+                            type: "double"
+                        }
+                    ]
+                });
+
+                // Add FeatureLayer to the map.
+                map.add(speciesFeatureLayer);
+            });
+        });
+    </script>
+
+</head>
+<body>
+<div th:insert="template :: menu"></div>
+
+<div id="viewDiv">Map Placeholder</div>
+
+<div th:insert="template :: footer"></div>
+
+</body>
+</html>

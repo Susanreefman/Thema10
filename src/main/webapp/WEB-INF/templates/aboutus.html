@@ -1,0 +1,38 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:insert="template :: headerFragment"></div>
+    <title>About Us</title>
+    <style>
+        #body{
+            padding: 20px;
+            margin: 0;
+            height: 100%;
+            width: 100%
+        }
+    </style>
+</head>
+<body>
+<div th:insert="template :: menu"></div>
+
+<div class="col-6">
+    <div class="container-fluid mt-3 w3-border w3-padding w3-round ws-grey">
+        <h1> About us </h1>
+        <br>
+        <p> This project is about creating a webpage with html, java, javascript and css. This site has some Java functionality
+        combined with ArcGIS to display a map on the weather tab. On this page, it is possible to search for a species and
+        provide certain options, see the weather page. The program also searches for environmental variables of the species
+        you're looking for. With this data, it searches for places on the earth that have similar conditions and where this
+        species also could possibly live (According to environment) </p>
+
+    <form action="/find_species">
+        <input type="submit" value="Go find species!" />
+    </form>
+    </div>
+
+</div>
+
+<div th:insert="template::footer"></div>
+
+</body>
+</html>

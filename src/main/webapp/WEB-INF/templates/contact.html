@@ -1,0 +1,61 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:insert="template :: headerFragment"></div>
+    <title>Contact</title>
+</head>
+<body>
+<div th:insert="template :: menu"></div>
+
+<div class="row">
+    <div class="col"></div>
+    <div class="col-6">
+        <div class="container-fluid mt-3 w3-border w3-padding w3-round ws-grey">
+            <form name="Contactform" method="post" action="/send" class="was-validated">
+                <fieldset>
+                    <legend>Contact</legend>
+                    <p th:text="#{subtitlecontact.msg}">Do you have any feedback or questions? PLease fill out this
+                        form and we will contact you as soon as possible!</p>
+                    <div class="form-floating mb-3 mt-3">
+                        <input type="text" class="form-control" id="firstname" name="firstname" th:placeholder="#{firstname.msg}" required>
+                        <label for="firstname" class="form-label" th:text="#{firstname.msg}">First Name:</label>
+                        <div class="valid-feedback" th:text="#{valid.msg}">Valid.</div>
+                        <div class="invalid-feedback" th:text="#{invalid.msg}">Please fill out this field.</div>
+                    </div>
+                    <div class="form-floating mb-3 mt-3">
+                        <input type="text" class="form-control" id="lastname" name="lastname" th:placeholder="#{lastname.msg}" required>
+                        <label for="lastname" class="form-label" th:text="#{lastname.msg}">Last Name:</label>
+                        <div class="valid-feedback" th:text="#{valid.msg}">Valid.</div>
+                        <div class="invalid-feedback" th:text="#{invalid.msg}">Please fill out this field.</div>
+                    </div>
+                    <div class="form-floating mb-3 mt-3">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                        <label for="email" class="form-label">Email:</label>
+                        <div class="valid-feedback" th:text="#{valid.msg}">Valid.</div>
+                        <div class="invalid-feedback" th:text="#{invalid.msg}">Please fill out this field.</div>
+                    </div>
+                    <div class="form-floating mb-3 mt-3">
+                        <input type="text" class="form-control" id="subject" name="subject" th:placeholder="#{subject.msg}" required>
+                        <label for="subject" class="form-label" th:text="#{subject.msg}">Subject:</label>
+                        <div class="valid-feedback" th:text="#{valid.msg}">Valid.</div>
+                        <div class="invalid-feedback" th:text="#{invalid.msg}">Please fill out this field.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" th:text="#{message.msg}">Message:</label>
+                        <textarea class="form-control" rows="5" id="message" name="message" th:placeholder="#{message.msg}" required></textarea>
+                        <div class="valid-feedback" th:text="#{valid.msg}">Valid.</div>
+                        <div class="invalid-feedback" th:text="#{invalid.msg}">Please fill out this field.</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div th:insert="template :: footer"></div>
+</body>
+</html>

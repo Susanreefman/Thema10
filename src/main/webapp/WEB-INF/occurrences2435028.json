@@ -1,0 +1,802 @@
+[
+  {
+    "eventDate": "2019-01-14T20:09:00",
+    "key": "2596320326",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 22.941776,
+    "decimalLongitude": -14.77066
+  },
+  {
+    "eventDate": "2019-01-11T00:00:00",
+    "key": "2833607079",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 24.146887,
+    "decimalLongitude": -14.184276
+  },
+  {
+    "eventDate": "2019-01-09T00:00:00",
+    "key": "2833729659",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.161978,
+    "decimalLongitude": -15.129053
+  },
+  {
+    "eventDate": "2019-01-12T00:00:00",
+    "key": "2834046487",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 22.65521,
+    "decimalLongitude": -15.613699
+  },
+  {
+    "eventDate": "2019-01-12T00:00:00",
+    "key": "2836257700",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 22.961075,
+    "decimalLongitude": -14.755518
+  },
+  {
+    "eventDate": "2019-01-12T00:00:00",
+    "key": "2840720213",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.098473,
+    "decimalLongitude": -14.924449
+  },
+  {
+    "eventDate": "2019-01-13T00:00:00",
+    "key": "2843760240",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.119827,
+    "decimalLongitude": -14.976027
+  },
+  {
+    "eventDate": "2019-03-30T18:25:00",
+    "key": "3070273711",
+    "country": "Western Sahara",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 24.215527,
+    "decimalLongitude": -12.885834
+  },
+  {
+    "eventDate": "2019-05-05T23:43:00",
+    "key": "2242889128",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.900122,
+    "decimalLongitude": -14.794905
+  },
+  {
+    "eventDate": "2019-10-29T09:57:20",
+    "key": "2447980735",
+    "country": "Chad",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 17.189915,
+    "decimalLongitude": 20.514744
+  },
+  {
+    "eventDate": "2018-01-20T00:00:00",
+    "key": "1807296444",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.315786,
+    "decimalLongitude": -15.215813
+  },
+  {
+    "eventDate": "2018-02-26T00:00:00",
+    "key": "2836566957",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 24.16566,
+    "decimalLongitude": -14.154607
+  },
+  {
+    "eventDate": "2018-02-20T00:00:00",
+    "key": "2840545159",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.664297,
+    "decimalLongitude": -15.73023
+  },
+  {
+    "eventDate": "2018-04-05T00:00:00",
+    "key": "2833266303",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.0543,
+    "decimalLongitude": -14.883
+  },
+  {
+    "eventDate": "2018-04-05T00:00:00",
+    "key": "2840756385",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.0466,
+    "decimalLongitude": -14.8788
+  },
+  {
+    "eventDate": "2018-04-05T00:00:00",
+    "key": "2842893249",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.0543,
+    "decimalLongitude": -14.883
+  },
+  {
+    "eventDate": "2018-04-05T00:00:00",
+    "key": "2843859263",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.0466,
+    "decimalLongitude": -14.8788
+  },
+  {
+    "eventDate": "2018-10-30T00:00:00",
+    "key": "2833260229",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.08,
+    "decimalLongitude": -15.24
+  },
+  {
+    "eventDate": "2018-10-29T00:00:00",
+    "key": "2843958166",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.01,
+    "decimalLongitude": -14.85
+  },
+  {
+    "eventDate": "2018-10-31T00:00:00",
+    "key": "2844262252",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.09,
+    "decimalLongitude": -15.23
+  },
+  {
+    "eventDate": "2019-01-09T00:00:00",
+    "key": "2833729659",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.161978,
+    "decimalLongitude": -15.129053
+  },
+  {
+    "eventDate": "2019-01-12T00:00:00",
+    "key": "2834046487",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 22.65521,
+    "decimalLongitude": -15.613699
+  },
+  {
+    "eventDate": "2019-01-12T00:00:00",
+    "key": "2836257700",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 22.961075,
+    "decimalLongitude": -14.755518
+  },
+  {
+    "eventDate": "2019-01-12T00:00:00",
+    "key": "2840720213",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.098473,
+    "decimalLongitude": -14.924449
+  },
+  {
+    "eventDate": "2019-01-13T00:00:00",
+    "key": "2843760240",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.119827,
+    "decimalLongitude": -14.976027
+  },
+  {
+    "eventDate": "2019-03-30T18:25:00",
+    "key": "3070273711",
+    "country": "Western Sahara",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 24.215527,
+    "decimalLongitude": -12.885834
+  },
+  {
+    "eventDate": "2019-05-05T23:43:00",
+    "key": "2242889128",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.900122,
+    "decimalLongitude": -14.794905
+  },
+  {
+    "eventDate": "2019-10-29T09:57:20",
+    "key": "2447980735",
+    "country": "Chad",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 17.189915,
+    "decimalLongitude": 20.514744
+  },
+  {
+    "eventDate": "2018-01-20T00:00:00",
+    "key": "1807296444",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.315786,
+    "decimalLongitude": -15.215813
+  },
+  {
+    "eventDate": "2018-02-26T00:00:00",
+    "key": "2836566957",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 24.16566,
+    "decimalLongitude": -14.154607
+  },
+  {
+    "eventDate": "2018-02-20T00:00:00",
+    "key": "2840545159",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.664297,
+    "decimalLongitude": -15.73023
+  },
+  {
+    "eventDate": "2018-04-05T00:00:00",
+    "key": "2833266303",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.0543,
+    "decimalLongitude": -14.883
+  },
+  {
+    "eventDate": "2018-04-05T00:00:00",
+    "key": "2840756385",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.0466,
+    "decimalLongitude": -14.8788
+  },
+  {
+    "eventDate": "2018-04-05T00:00:00",
+    "key": "2842893249",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.0543,
+    "decimalLongitude": -14.883
+  },
+  {
+    "eventDate": "2018-04-05T00:00:00",
+    "key": "2843859263",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.0466,
+    "decimalLongitude": -14.8788
+  },
+  {
+    "eventDate": "2018-10-30T00:00:00",
+    "key": "2833260229",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.08,
+    "decimalLongitude": -15.24
+  },
+  {
+    "eventDate": "2018-10-29T00:00:00",
+    "key": "2843958166",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.01,
+    "decimalLongitude": -14.85
+  },
+  {
+    "eventDate": "2018-10-31T00:00:00",
+    "key": "2844262252",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.09,
+    "decimalLongitude": -15.23
+  },
+  {
+    "eventDate": "2018-11-02T00:00:00",
+    "key": "2833548319",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.08,
+    "decimalLongitude": -15.24
+  },
+  {
+    "eventDate": "2014-02-02T00:00:00",
+    "key": "2421796242",
+    "country": "Mauritania",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 18.406092,
+    "decimalLongitude": -9.352792
+  },
+  {
+    "eventDate": "2019-01-12T00:00:00",
+    "key": "2836257700",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 22.961075,
+    "decimalLongitude": -14.755518
+  },
+  {
+    "eventDate": "2019-01-12T00:00:00",
+    "key": "2840720213",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.098473,
+    "decimalLongitude": -14.924449
+  },
+  {
+    "eventDate": "2019-01-13T00:00:00",
+    "key": "2843760240",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.119827,
+    "decimalLongitude": -14.976027
+  },
+  {
+    "eventDate": "2019-03-30T18:25:00",
+    "key": "3070273711",
+    "country": "Western Sahara",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 24.215527,
+    "decimalLongitude": -12.885834
+  },
+  {
+    "eventDate": "2019-05-05T23:43:00",
+    "key": "2242889128",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.900122,
+    "decimalLongitude": -14.794905
+  },
+  {
+    "eventDate": "2019-10-29T09:57:20",
+    "key": "2447980735",
+    "country": "Chad",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 17.189915,
+    "decimalLongitude": 20.514744
+  },
+  {
+    "eventDate": "2018-01-20T00:00:00",
+    "key": "1807296444",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.315786,
+    "decimalLongitude": -15.215813
+  },
+  {
+    "eventDate": "2018-02-26T00:00:00",
+    "key": "2836566957",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 24.16566,
+    "decimalLongitude": -14.154607
+  },
+  {
+    "eventDate": "2018-02-20T00:00:00",
+    "key": "2840545159",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.664297,
+    "decimalLongitude": -15.73023
+  },
+  {
+    "eventDate": "2018-04-05T00:00:00",
+    "key": "2833266303",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.0543,
+    "decimalLongitude": -14.883
+  },
+  {
+    "eventDate": "2018-04-05T00:00:00",
+    "key": "2840756385",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.0466,
+    "decimalLongitude": -14.8788
+  },
+  {
+    "eventDate": "2018-04-05T00:00:00",
+    "key": "2842893249",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.0543,
+    "decimalLongitude": -14.883
+  },
+  {
+    "eventDate": "2018-04-05T00:00:00",
+    "key": "2843859263",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.0466,
+    "decimalLongitude": -14.8788
+  },
+  {
+    "eventDate": "2018-10-30T00:00:00",
+    "key": "2833260229",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.08,
+    "decimalLongitude": -15.24
+  },
+  {
+    "eventDate": "2018-10-29T00:00:00",
+    "key": "2843958166",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.01,
+    "decimalLongitude": -14.85
+  },
+  {
+    "eventDate": "2018-10-31T00:00:00",
+    "key": "2844262252",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.09,
+    "decimalLongitude": -15.23
+  },
+  {
+    "eventDate": "2018-11-02T00:00:00",
+    "key": "2833548319",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.08,
+    "decimalLongitude": -15.24
+  },
+  {
+    "eventDate": "2014-02-02T00:00:00",
+    "key": "2421796242",
+    "country": "Mauritania",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 18.406092,
+    "decimalLongitude": -9.352792
+  },
+  {
+    "eventDate": "2013-03-24T13:49:00",
+    "key": "1453302434",
+    "country": "Uzbekistan",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 40.37,
+    "decimalLongitude": 63.98
+  },
+  {
+    "eventDate": "2013-03-24T00:00:00",
+    "key": "2821634811",
+    "country": "Uzbekistan",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 40.35402,
+    "decimalLongitude": 63.9458
+  },
+  {
+    "eventDate": "2019-01-13T00:00:00",
+    "key": "2843760240",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.119827,
+    "decimalLongitude": -14.976027
+  },
+  {
+    "eventDate": "2019-03-30T18:25:00",
+    "key": "3070273711",
+    "country": "Western Sahara",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 24.215527,
+    "decimalLongitude": -12.885834
+  },
+  {
+    "eventDate": "2019-05-05T23:43:00",
+    "key": "2242889128",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.900122,
+    "decimalLongitude": -14.794905
+  },
+  {
+    "eventDate": "2019-10-29T09:57:20",
+    "key": "2447980735",
+    "country": "Chad",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 17.189915,
+    "decimalLongitude": 20.514744
+  },
+  {
+    "eventDate": "2018-01-20T00:00:00",
+    "key": "1807296444",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.315786,
+    "decimalLongitude": -15.215813
+  },
+  {
+    "eventDate": "2018-02-26T00:00:00",
+    "key": "2836566957",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 24.16566,
+    "decimalLongitude": -14.154607
+  },
+  {
+    "eventDate": "2018-02-20T00:00:00",
+    "key": "2840545159",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.664297,
+    "decimalLongitude": -15.73023
+  },
+  {
+    "eventDate": "2018-04-05T00:00:00",
+    "key": "2833266303",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.0543,
+    "decimalLongitude": -14.883
+  },
+  {
+    "eventDate": "2018-04-05T00:00:00",
+    "key": "2840756385",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.0466,
+    "decimalLongitude": -14.8788
+  },
+  {
+    "eventDate": "2018-04-05T00:00:00",
+    "key": "2842893249",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.0543,
+    "decimalLongitude": -14.883
+  },
+  {
+    "eventDate": "2018-04-05T00:00:00",
+    "key": "2843859263",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.0466,
+    "decimalLongitude": -14.8788
+  },
+  {
+    "eventDate": "2018-10-30T00:00:00",
+    "key": "2833260229",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.08,
+    "decimalLongitude": -15.24
+  },
+  {
+    "eventDate": "2018-10-29T00:00:00",
+    "key": "2843958166",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.01,
+    "decimalLongitude": -14.85
+  },
+  {
+    "eventDate": "2018-10-31T00:00:00",
+    "key": "2844262252",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.09,
+    "decimalLongitude": -15.23
+  },
+  {
+    "eventDate": "2018-11-02T00:00:00",
+    "key": "2833548319",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.08,
+    "decimalLongitude": -15.24
+  },
+  {
+    "eventDate": "2014-02-02T00:00:00",
+    "key": "2421796242",
+    "country": "Mauritania",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 18.406092,
+    "decimalLongitude": -9.352792
+  },
+  {
+    "eventDate": "2013-03-24T13:49:00",
+    "key": "1453302434",
+    "country": "Uzbekistan",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 40.37,
+    "decimalLongitude": 63.98
+  },
+  {
+    "eventDate": "2013-03-24T00:00:00",
+    "key": "2821634811",
+    "country": "Uzbekistan",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 40.35402,
+    "decimalLongitude": 63.9458
+  },
+  {
+    "eventDate": "2013-03-24T00:00:00",
+    "key": "3333906872",
+    "country": "Israel",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 32.044,
+    "decimalLongitude": 34.823
+  },
+  {
+    "eventDate": "2013-04-15T00:00:00",
+    "key": "2821634809",
+    "country": "Uzbekistan",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 40.46576,
+    "decimalLongitude": 63.874
+  },
+  {
+    "eventDate": "2019-05-05T23:43:00",
+    "key": "2242889128",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.900122,
+    "decimalLongitude": -14.794905
+  },
+  {
+    "eventDate": "2019-10-29T09:57:20",
+    "key": "2447980735",
+    "country": "Chad",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 17.189915,
+    "decimalLongitude": 20.514744
+  },
+  {
+    "eventDate": "2018-01-20T00:00:00",
+    "key": "1807296444",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.315786,
+    "decimalLongitude": -15.215813
+  },
+  {
+    "eventDate": "2018-02-26T00:00:00",
+    "key": "2836566957",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 24.16566,
+    "decimalLongitude": -14.154607
+  },
+  {
+    "eventDate": "2018-02-20T00:00:00",
+    "key": "2840545159",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.664297,
+    "decimalLongitude": -15.73023
+  },
+  {
+    "eventDate": "2018-04-05T00:00:00",
+    "key": "2833266303",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.0543,
+    "decimalLongitude": -14.883
+  },
+  {
+    "eventDate": "2018-04-05T00:00:00",
+    "key": "2840756385",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.0466,
+    "decimalLongitude": -14.8788
+  },
+  {
+    "eventDate": "2018-04-05T00:00:00",
+    "key": "2842893249",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.0543,
+    "decimalLongitude": -14.883
+  },
+  {
+    "eventDate": "2018-04-05T00:00:00",
+    "key": "2843859263",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.0466,
+    "decimalLongitude": -14.8788
+  },
+  {
+    "eventDate": "2018-10-30T00:00:00",
+    "key": "2833260229",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.08,
+    "decimalLongitude": -15.24
+  },
+  {
+    "eventDate": "2018-10-29T00:00:00",
+    "key": "2843958166",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.01,
+    "decimalLongitude": -14.85
+  },
+  {
+    "eventDate": "2018-10-31T00:00:00",
+    "key": "2844262252",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.09,
+    "decimalLongitude": -15.23
+  },
+  {
+    "eventDate": "2018-11-02T00:00:00",
+    "key": "2833548319",
+    "country": "Morocco",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 23.08,
+    "decimalLongitude": -15.24
+  },
+  {
+    "eventDate": "2014-02-02T00:00:00",
+    "key": "2421796242",
+    "country": "Mauritania",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 18.406092,
+    "decimalLongitude": -9.352792
+  },
+  {
+    "eventDate": "2013-03-24T13:49:00",
+    "key": "1453302434",
+    "country": "Uzbekistan",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 40.37,
+    "decimalLongitude": 63.98
+  },
+  {
+    "eventDate": "2013-03-24T00:00:00",
+    "key": "2821634811",
+    "country": "Uzbekistan",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 40.35402,
+    "decimalLongitude": 63.9458
+  },
+  {
+    "eventDate": "2013-03-24T00:00:00",
+    "key": "3333906872",
+    "country": "Israel",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 32.044,
+    "decimalLongitude": 34.823
+  },
+  {
+    "eventDate": "2013-04-15T00:00:00",
+    "key": "2821634809",
+    "country": "Uzbekistan",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 40.46576,
+    "decimalLongitude": 63.874
+  },
+  {
+    "eventDate": "2013-12-17T00:00:00",
+    "key": "2835904288",
+    "country": "Oman",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 20.756264,
+    "decimalLongitude": 58.652687
+  },
+  {
+    "eventDate": "2012-05-01T00:00:00",
+    "key": "2421796078",
+    "country": "Niger",
+    "identificationVerificationStatus": null,
+    "decimalLatitude": 13.180532,
+    "decimalLongitude": 12.232698
+  }
+]
