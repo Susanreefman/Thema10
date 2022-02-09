@@ -18,7 +18,9 @@ import java.util.Random;
 import java.util.stream.Collectors;
 
 /**
- * This servlet provides a file-download of benchmark results depending on session ID
+ * SpeciesDataServlet
+ * Gets information through json file from the WEB-INF directory returns json
+ * In file information about species
  */
 @WebServlet(urlPatterns = "/speciesdownload")
 public class SpeciesDataServlet extends HttpServlet {

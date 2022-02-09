@@ -1,5 +1,9 @@
 package thema10.model;
 
+/**
+ * Station
+ * Model to create variables with correct information from json file
+ */
 public class Station {
 
     /* Data example:

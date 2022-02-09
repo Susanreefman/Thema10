@@ -11,8 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Date;
-import java.util.Locale;
 
+/**
+ * WeatherServlet
+ * Run /find_species page with weather.html
+ */
 @WebServlet(name = "WeatherServlet", urlPatterns = "/find_species", loadOnStartup = 1)
 public class WeatherServlet extends HttpServlet {
     @Override

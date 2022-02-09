@@ -14,6 +14,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
 
+/**
+ * ErrorHandler
+ * Run error pages: /403, /404 & /500 page with different html files as template
+ */
 @WebServlet(name = "ErrorHandler", urlPatterns = {"/404", "/403", "/500"}, loadOnStartup = 1)
 public class ErrorHandler extends HttpServlet {
     @Override
@@ -50,6 +54,7 @@ public class ErrorHandler extends HttpServlet {
             requestUri = "Unknown";
         }
 
+        // The status code refers to corresponding error page
         if (statusCode == 404) {
             WebConfig.configureResponse(response);
             WebContext ctx = new WebContext(
@@ -81,6 +86,7 @@ public class ErrorHandler extends HttpServlet {
             WebConfig.createTemplateEngine(getServletContext()).
                     process("errors/500", ctx, response.getWriter());
         } else {
+            // For other status codes references to corresponding information
             PrintWriter out = response.getWriter();
             String title = "Error/Exception Information";
             String docType =

@@ -11,6 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Date;
 
+/**
+ * WelcomeServlet
+ * Run /welcome page with welcome.html
+ */
 @WebServlet(name = "WelcomeServlet", urlPatterns = "/welcome", loadOnStartup = 1)
 public class WelcomeServlet extends HttpServlet {
     @Override

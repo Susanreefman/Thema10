@@ -1,3 +1,7 @@
+/**
+ * WebConfig
+ */
+
 package thema10.config;
 
 import org.thymeleaf.TemplateEngine;

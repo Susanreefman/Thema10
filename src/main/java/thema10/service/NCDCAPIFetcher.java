@@ -29,7 +29,6 @@ public class NCDCAPIFetcher {
         HttpURLConnection con = (HttpURLConnection) APIUrl.openConnection();
         con.setRequestMethod("GET");
         con.setRequestProperty("Content-Type", "application/json");
-        // FIXME: add your own NCDC token
         con.setRequestProperty("token", "");
 
         // List storing all stations

@@ -12,6 +12,10 @@ package thema10.servlets;
         import java.io.IOException;
         import java.util.Date;
 
+/**
+ * AboutUsServlet
+ * Run /about_us page with aboutus.html
+ */
 @WebServlet(name = "AboutUsServlet", urlPatterns = "/about_us", loadOnStartup = 1)
 public class AboutUsServlet extends HttpServlet {
     @Override

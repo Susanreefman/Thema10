@@ -13,6 +13,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
 
+/**
+ * SendEmail
+ * Run /send page with email.html
+ * Returns when contactform is filled in.
+ */
 @WebServlet(name="SendEmail", urlPatterns = "/send")
 public class SendEmail extends HttpServlet {
 

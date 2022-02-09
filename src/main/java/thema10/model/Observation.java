@@ -2,6 +2,10 @@ package thema10.model;
 
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * Observation
+ * Model to create variables with correct information from json file
+ */
 public class Observation {
 
     @SerializedName("eventDate")

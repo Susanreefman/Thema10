@@ -12,6 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Date;
 
+/**
+ * ContactServlet
+ * Run /contact page with contact.html
+ */
 @WebServlet(name = "ContactServlet", urlPatterns = "/contact", loadOnStartup = 1)
 public class ContactServlet extends HttpServlet {
     @Override
